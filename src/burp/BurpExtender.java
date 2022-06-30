@@ -64,7 +64,7 @@ public class BurpExtender implements IBurpExtender, ITab, IHttpListener{
     public void pushMessage(){
         PrintWriter stdout = new PrintWriter(callbacks.getStdout(), true);
         this.token = BurpExtenderTab.configcomp.telegramTokentxtbox.getText().trim();
-        this.chat = BurpExtenderTab.configcomp.chatIDtxtbox.getText().toString().trim();
+        this.chat = BurpExtenderTab.configcomp.chatIDtxtbox.getText().trim();
 
         try {
             URL url = new URL("https://api.telegram.org/bot" + this.token + "/sendMessage");
@@ -73,7 +73,7 @@ public class BurpExtender implements IBurpExtender, ITab, IHttpListener{
             List<String> headers = new ArrayList<>();
             headers.add("POST " + url.getPath() + " HTTP/2");
             headers.add("Host: " + url.getHost());
-            headers.add("User-Agent: Burp2Telegram/1.1");
+            headers.add("User-Agent: Burp2Telegram/1.0");
             headers.add("Content-Type: application/x-www-form-urlencoded");
             headers.add("Content-Length: " + data.length());
 
